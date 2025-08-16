@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { createSupabaseClient, type Video } from '@/lib/supabase'
-import { Play, Star, Clock, User, ArrowRight } from 'lucide-react'
+import { Play, Star, Clock, User, ArrowRight, BookOpen, Award, Users, TrendingUp } from 'lucide-react'
 
 export default function Home() {
   const [videos, setVideos] = useState<Video[]>([])
@@ -52,26 +52,39 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+    <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
       {/* Header */}
-      <header className="border-b border-gray-800 bg-black/20 backdrop-blur-sm">
+      <header className="border-b border-gray-800 bg-black/40 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
-              <h1 className="text-2xl font-bold text-white">NEXT GEN</h1>
+              <h1 className="text-2xl font-bold text-neon-green">NEXT GEN</h1>
+              <span className="ml-2 text-sm font-medium text-gray-400">Education</span>
             </div>
             <nav className="flex items-center space-x-4">
               <Link 
+                href="/courses" 
+                className="text-gray-300 hover:text-neon-green px-3 py-2 rounded-md text-sm font-medium transition-colors"
+              >
+                강의
+              </Link>
+              <Link 
+                href="/about" 
+                className="text-gray-300 hover:text-neon-green px-3 py-2 rounded-md text-sm font-medium transition-colors"
+              >
+                소개
+              </Link>
+              <Link 
                 href="/auth/signin" 
-                className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                className="text-gray-300 hover:text-neon-green px-3 py-2 rounded-md text-sm font-medium transition-colors"
               >
                 로그인
               </Link>
               <Link 
                 href="/auth/signup" 
-                className="bg-purple-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-purple-700"
+                className="bg-neon-green text-black px-4 py-2 rounded-md text-sm font-bold hover:shadow-neon transition-all duration-300"
               >
-                회원가입
+                무료 가입
               </Link>
             </nav>
           </div>
@@ -82,30 +95,50 @@ export default function Home() {
       <section className="relative py-20 px-4 text-center">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
-            차세대 비디오
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
-              플랫폼
+            차세대 교육의
+            <span className="block text-neon-green drop-shadow-lg animate-glow">
+              미래를 경험하세요
             </span>
           </h1>
           <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-            콘텐츠 제작자와 구매자를 연결하는 혁신적인 비디오 플랫폼. 
-            워터마킹 기술로 안전하게 콘텐츠를 보호합니다.
+            전문가가 제작한 고품질 교육 콘텐츠로 새로운 기술과 지식을 습득하세요. 
+            실무 중심의 강의로 당신의 경력을 한 단계 업그레이드하세요.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link 
-              href="/auth/signup?role=creator" 
-              className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-3 rounded-lg font-medium hover:from-purple-700 hover:to-pink-700 flex items-center justify-center"
+              href="/courses" 
+              className="bg-neon-green text-black px-8 py-4 rounded-lg font-bold hover:shadow-neon-lg transition-all duration-300 flex items-center justify-center text-lg"
             >
-              제작자로 시작하기
-              <ArrowRight className="ml-2 w-5 h-5" />
+              강의 둘러보기
+              <BookOpen className="ml-2 w-5 h-5" />
             </Link>
             <Link 
-              href="/videos" 
-              className="border border-gray-600 text-white px-8 py-3 rounded-lg font-medium hover:bg-gray-800 flex items-center justify-center"
+              href="/auth/signup" 
+              className="border-2 border-neon-green text-neon-green px-8 py-4 rounded-lg font-bold hover:bg-neon-green hover:text-black transition-all duration-300 flex items-center justify-center text-lg"
             >
-              비디오 둘러보기
-              <Play className="ml-2 w-5 h-5" />
+              무료로 시작하기
+              <ArrowRight className="ml-2 w-5 h-5" />
             </Link>
+          </div>
+          
+          {/* Stats */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 max-w-3xl mx-auto">
+            <div className="text-center">
+              <div className="text-3xl font-bold text-neon-green mb-2">1000+</div>
+              <div className="text-gray-400 text-sm">전문 강의</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-bold text-neon-green mb-2">50k+</div>
+              <div className="text-gray-400 text-sm">수강생</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-bold text-neon-green mb-2">98%</div>
+              <div className="text-gray-400 text-sm">만족도</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-bold text-neon-green mb-2">24/7</div>
+              <div className="text-gray-400 text-sm">학습 지원</div>
+            </div>
           </div>
         </div>
       </section>
@@ -114,10 +147,10 @@ export default function Home() {
       <section className="py-16 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="flex items-center justify-between mb-12">
-            <h2 className="text-3xl font-bold text-white">인기 비디오</h2>
+            <h2 className="text-3xl font-bold text-white">인기 강의</h2>
             <Link 
-              href="/videos" 
-              className="text-purple-400 hover:text-purple-300 font-medium flex items-center"
+              href="/courses" 
+              className="text-neon-green hover:text-green-400 font-medium flex items-center"
             >
               전체보기
               <ArrowRight className="ml-1 w-4 h-4" />
@@ -139,7 +172,7 @@ export default function Home() {
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {videos.map((video) => (
-                <Link key={video.id} href={`/videos/${video.id}`}>
+                <Link key={video.id} href={`/courses/${video.id}`}>
                   <div className="group cursor-pointer">
                     <div className="relative bg-gray-800 aspect-video rounded-lg mb-4 overflow-hidden">
                       {video.thumbnail_path ? (
@@ -165,7 +198,7 @@ export default function Home() {
                       </div>
                     </div>
                     <div className="space-y-2">
-                      <h3 className="font-medium text-white group-hover:text-purple-400 transition-colors duration-200 line-clamp-2">
+                      <h3 className="font-medium text-white group-hover:text-neon-green transition-colors duration-200 line-clamp-2">
                         {video.title}
                       </h3>
                       <div className="flex items-center text-sm text-gray-400">
@@ -173,7 +206,7 @@ export default function Home() {
                         {video.profiles?.username || 'Unknown'}
                       </div>
                       <div className="flex items-center justify-between">
-                        <span className="text-lg font-bold text-purple-400">
+                        <span className="text-lg font-bold text-neon-green">
                           {formatPrice(video.price)}
                         </span>
                         <div className="flex items-center text-sm text-gray-400">
@@ -194,37 +227,37 @@ export default function Home() {
       <section className="py-16 px-4 bg-black/20">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-white mb-4">왜 NextGen인가요?</h2>
+            <h2 className="text-3xl font-bold text-white mb-4">왜 NextGen Education인가요?</h2>
             <p className="text-gray-300 max-w-2xl mx-auto">
-              최신 기술과 혁신적인 기능으로 안전하고 편리한 비디오 플랫폼을 제공합니다.
+              최신 기술과 혁신적인 기능으로 안전하고 편리한 교육 플랫폼을 제공합니다.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center">
-              <div className="bg-purple-600/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Star className="w-8 h-8 text-purple-400" />
+              <div className="bg-neon-green/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Award className="w-8 h-8 text-neon-green" />
               </div>
-              <h3 className="text-xl font-semibold text-white mb-2">워터마킹 기술</h3>
+              <h3 className="text-xl font-semibold text-white mb-2">전문 강사진</h3>
               <p className="text-gray-400">
-                사용자별 워터마크로 무단 배포를 방지하고 콘텐츠를 안전하게 보호합니다.
+                현업에서 인정받는 전문가들이 직접 제작한 고품질 강의를 제공합니다.
               </p>
             </div>
             <div className="text-center">
-              <div className="bg-purple-600/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Clock className="w-8 h-8 text-purple-400" />
+              <div className="bg-neon-green/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <TrendingUp className="w-8 h-8 text-neon-green" />
               </div>
-              <h3 className="text-xl font-semibold text-white mb-2">실시간 스트리밍</h3>
+              <h3 className="text-xl font-semibold text-white mb-2">실무 중심 커리큘럼</h3>
               <p className="text-gray-400">
-                빠르고 안정적인 스트리밍으로 끊김 없는 시청 경험을 제공합니다.
+                이론뿐 아니라 실제 업무에 바로 적용할 수 있는 실무 중심의 내용을 학습합니다.
               </p>
             </div>
             <div className="text-center">
-              <div className="bg-purple-600/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <User className="w-8 h-8 text-purple-400" />
+              <div className="bg-neon-green/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Users className="w-8 h-8 text-neon-green" />
               </div>
-              <h3 className="text-xl font-semibold text-white mb-2">쉬운 수익화</h3>
+              <h3 className="text-xl font-semibold text-white mb-2">커뮤니티 지원</h3>
               <p className="text-gray-400">
-                간단한 업로드와 가격 설정으로 콘텐츠를 수익화할 수 있습니다.
+                동료 학습자들과 함께 네트워크를 형성하고 서로 도움을 받으며 성장합니다.
               </p>
             </div>
           </div>

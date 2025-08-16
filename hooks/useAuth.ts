@@ -181,11 +181,11 @@ export function withAuth<P extends object>(
     }, [user, loading, router])
 
     if (loading) {
-      return (
-        <div className="flex items-center justify-center min-h-screen">
-          <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-blue-500"></div>
-        </div>
-      )
+      return React.createElement('div', {
+        className: 'flex items-center justify-center min-h-screen'
+      }, React.createElement('div', {
+        className: 'animate-spin rounded-full h-32 w-32 border-b-2 border-blue-500'
+      }))
     }
 
     if (options.requireAuth && !user) {
@@ -196,6 +196,6 @@ export function withAuth<P extends object>(
       return null
     }
 
-    return <Component {...props} />
+    return React.createElement(Component, props)
   }
 }

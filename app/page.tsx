@@ -59,7 +59,7 @@ export default function Home() {
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
               <h1 className="text-2xl font-bold text-neon-green">NEXT GEN</h1>
-              <span className="ml-2 text-sm font-medium text-gray-400">Education</span>
+              <span className="ml-2 text-sm font-medium text-gray-400">Creator Academy</span>
             </div>
             <nav className="flex items-center space-x-4">
               <Link 
@@ -95,14 +95,14 @@ export default function Home() {
       <section className="relative py-20 px-4 text-center">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
-            차세대 교육의
+            차세대 크리에이터의
             <span className="block text-neon-green drop-shadow-lg animate-glow">
-              미래를 경험하세요
+              꿈을 현실로
             </span>
           </h1>
           <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-            전문가가 제작한 고품질 교육 콘텐츠로 새로운 기술과 지식을 습득하세요. 
-            실무 중심의 강의로 당신의 경력을 한 단계 업그레이드하세요.
+            콘텐츠 제작부터 수익화까지, 성공하는 크리에이터가 되기 위한 모든 것을 배워보세요. 
+            현역 크리에이터들이 직접 전수하는 실무 중심의 교육 프로그램입니다.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link 
@@ -124,20 +124,20 @@ export default function Home() {
           {/* Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 max-w-3xl mx-auto">
             <div className="text-center">
-              <div className="text-3xl font-bold text-neon-green mb-2">1000+</div>
+              <div className="text-3xl font-bold text-neon-green mb-2">50+</div>
               <div className="text-gray-400 text-sm">전문 강의</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-neon-green mb-2">50k+</div>
+              <div className="text-3xl font-bold text-neon-green mb-2">5k+</div>
               <div className="text-gray-400 text-sm">수강생</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-neon-green mb-2">98%</div>
-              <div className="text-gray-400 text-sm">만족도</div>
+              <div className="text-3xl font-bold text-neon-green mb-2">15+</div>
+              <div className="text-gray-400 text-sm">전문 강사</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-neon-green mb-2">24/7</div>
-              <div className="text-gray-400 text-sm">학습 지원</div>
+              <div className="text-3xl font-bold text-neon-green mb-2">4.9</div>
+              <div className="text-gray-400 text-sm">평균 평점</div>
             </div>
           </div>
         </div>
@@ -227,9 +227,9 @@ export default function Home() {
       <section className="py-16 px-4 bg-black/20">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-white mb-4">왜 NextGen Education인가요?</h2>
+            <h2 className="text-3xl font-bold text-white mb-4">왜 NEXT GEN Creator Academy인가요?</h2>
             <p className="text-gray-300 max-w-2xl mx-auto">
-              최신 기술과 혁신적인 기능으로 안전하고 편리한 교육 플랫폼을 제공합니다.
+              차세대 크리에이터 육성을 위한 최고의 교육과 지원 시스템을 제공합니다.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -268,7 +268,7 @@ export default function Home() {
       <footer className="border-t border-gray-800 py-8 px-4">
         <div className="max-w-7xl mx-auto text-center">
           <p className="text-gray-400">
-            © 2024 NextGen. All rights reserved. 
+            © 2024 NEXT GEN Creator Academy. All rights reserved. 
             <span className="block mt-2 text-sm">
               🤖 Powered by Supabase + Next.js
             </span>
